@@ -1,0 +1,34 @@
+service:
+  name: test-typescript
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  food-index:
+    handler: handler.index
+    events:
+      - http:
+          method: get
+          path: resources
+          cors: true
+          integration: lambda
+          authorizer: "aws_iam"
+
+  food-show:
+    handler: handler.show
+    events:
+      - http:
+          method: get
+          path: resources/{id}
+          cors: true
+          request:
+            parameters:
+              paths:
+                - id: true
