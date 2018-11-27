@@ -20,6 +20,6 @@ Each command must be executed within the service folder `cd {service}` except fr
 
 ## AWS concepts
 
-CloudFormation -> templating system for aws resources
-Cognito User Pool -> user database
-Cognito Federated Identities -> sessions
+- CloudFormation -> templating system for aws resources
+- Cognito User Pool -> user database
+- Cognito Federated Identities -> sessions
